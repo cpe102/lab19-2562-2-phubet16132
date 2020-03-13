@@ -92,8 +92,10 @@ int Unit:: beAttacked(int damage){
 int Unit:: heal(){
 	int healdamage = rand()%21+10;
 	hp+=healdamage;
+	int ohp=hp;
 	if(hp+healdamage>=hpmax){
 		hp=hpmax;
+		return hpmax-ohp;
 	}
 	
 	return healdamage;
